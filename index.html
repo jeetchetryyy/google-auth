@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auth</title>
+  <link rel="stylesheet" href="/public/style.css" />
+</head>
+<body>
+
+<main class="page">
+  <div class="auth-card">
+
+    <div class="logo">✦</div>
+
+    <h1 id="title">Welcome back</h1>
+    <p id="subtitle">Sign in to continue</p>
+
+    <div class="tabs">
+      <button id="loginTab"  class="tab active" type="button" onclick="showLogin()">Login</button>
+      <button id="signupTab" class="tab"        type="button" onclick="showSignup()">Sign Up</button>
+    </div>
+
+    <form id="loginForm">
+      <div class="field">
+        <label>Email</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <div class="password-box">
+          <input id="loginPassword" type="password" placeholder="Enter your password" required />
+          <button type="button" class="show-btn" onclick="togglePassword('loginPassword', this)">Show</button>
+        </div>
+      </div>
+
+      <button class="submit" type="submit">Login</button>
+    </form>
+
+    <form id="signupForm" class="hidden">
+      <div class="field">
+        <label>Email</label>
+        <input id="signupEmail" type="email" placeholder="you@example.com" required />
+      </div>
+
+      <div class="field">
+        <label>Password</label>
+        <div class="password-box">
+          <input id="signupPassword" type="password" placeholder="Create a password" required />
+          <button type="button" class="show-btn" onclick="togglePassword('signupPassword', this)">Show</button>
+        </div>
+      </div>
+
+      <button class="submit" type="submit">Create Account</button>
+    </form>
+
+    <div id="message"></div>
+
+    <div class="footer">Secure authentication powered by SuperTokens</div>
+
+  </div>
+</main>
+
+<script>
+function showLogin() {
+  document.getElementById("loginForm").classList.remove("hidden");
+  document.getElementById("signupForm").classList.add("hidden");
+  document.getElementById("loginTab").classList.add("active");
+  document.getElementById("signupTab").classList.remove("active");
+  document.getElementById("title").textContent = "Welcome back";
+  document.getElementById("subtitle").textContent = "Sign in to continue";
+  document.getElementById("message").textContent = "";
+}
+
+function showSignup() {
+  console.log("🟢 SIGN UP CLICKED");
+  document.getElementById("loginForm").classList.add("hidden");
+  document.getElementById("signupForm").classList.remove("hidden");
+  document.getElementById("loginTab").classList.remove("active");
+  document.getElementById("signupTab").classList.add("active");
+  document.getElementById("title").textContent = "Create account";
+  document.getElementById("subtitle").textContent = "Create your account to get started";
+  document.getElementById("message").textContent = "";
+}
+</script>
+
+<script type="module" src="/public/auth.js"></script>
+
+</body>
+</html>

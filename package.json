@@ -1,0 +1,30 @@
+﻿{
+    "name":  "google-auth",
+    "version":  "1.0.0",
+    "description":  "",
+    "main":  "server.js",
+    "scripts":  {
+                    "build":  "esbuild src/auth.js --bundle --format=esm --outfile=public/auth.js",
+                    "watch":  "esbuild src/auth.js --bundle --format=esm --outfile=public/auth.js --watch",
+                    "dev":  "npm run build \u0026\u0026 node server.js",
+                    "start":  "npm run build \u0026\u0026 node server.js"
+                },
+    "keywords":  [
+
+                 ],
+    "author":  "",
+    "license":  "ISC",
+    "type":  "commonjs",
+    "dependencies":  {
+                         "dotenv":  "^17.4.2",
+                         "express":  "^5.2.1",
+                         "mongodb":  "^7.6.0",
+                         "supertokens-node":  "^24.0.3",
+                         "supertokens-web-js":  "^0.16.0"
+                     },
+    "devDependencies":  {
+                            "esbuild":  "^0.28.2",
+                            "nodemon":  "^3.1.14",
+                            "vite":  "^8.3.0"
+                        }
+}
