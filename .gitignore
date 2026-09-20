@@ -3,3 +3,4 @@
 public/auth.js
 *.log
 .DS_Store
+.vscode/
