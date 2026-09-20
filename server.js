@@ -60,7 +60,10 @@ app.get("/", (_req, res) => {
 const client = new MongoClient(process.env.MONGODB_URI, {
   family: 4,
   tls: true,
+  serverSelectionTimeoutMS: 10000,
+  connectTimeoutMS: 10000,
 });
+
 
 let users;
 
