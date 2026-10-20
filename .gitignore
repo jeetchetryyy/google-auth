@@ -1,6 +1,17 @@
 ﻿node_modules/
 .env
+
+# Old single-bundle output (pre-refactor)
 public/auth.js
+
+# Current esbuild output
+public/js/
+
+# Local dev scripts
+test-e2e.ps1
+refactor.ps1
+
+# Logs / OS / editor
 *.log
 .DS_Store
-.vscode/public/js/
+.vscode/
