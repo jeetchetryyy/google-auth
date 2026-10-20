@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/public/shared/base.css" />
+  <style>
+    .dash { max-width: 820px; }
+    .kpis { display:grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap:16px; margin: 24px 0; }
+    .kpi { background:#f7f7fa; border-radius:14px; padding:18px; }
+    .kpi .label { font-size:12px; color:#666; text-transform:uppercase; letter-spacing:.5px; }
+    .kpi .value { font-size:22px; font-weight:700; margin-top:8px; word-break:break-word; }
+    .row { display:flex; justify-content:space-between; padding:12px 0; border-bottom:1px solid #eee; }
+    .row:last-child { border-bottom:0; }
+    .row .k { color:#666; font-size:14px; }
+    .row .v { font-weight:600; font-size:14px; }
+    .logout { background:transparent; color:#111; border:1px solid #d7d7dc; }
+    .logout:hover { background:#f0f0f2; }
+    .badge { display:inline-block; background:#dcfce7; color:#15803d; font-size:11px; font-weight:700; padding:4px 8px; border-radius:6px; margin-left:8px; vertical-align:middle; }
+  </style>
+</head>
+<body>
+<main class="page">
+  <div class="card dash">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+      <div>
+        <h1 style="text-align:left;font-size:24px;margin:0;">Dashboard</h1>
+        <p class="subtitle" style="text-align:left;margin-top:6px;">Welcome back, <span id="userEmail">…</span></p>
+      </div>
+      <button class="submit logout" id="logoutBtn" style="width:auto;margin:0;padding:10px 16px;">Log out</button>
+    </div>
+
+    <div id="loading" class="message loading">Loading your data…</div>
+    <div id="errorBox" class="message error hidden"></div>
+
+    <div id="content" class="hidden">
+      <h3 style="margin-top:24px;font-size:16px;">Comprehension snapshot <span class="badge">live</span></h3>
+
+      <div class="kpis">
+        <div class="kpi"><div class="label">Monthly surplus</div><div class="value" id="kpiSurplus">—</div></div>
+        <div class="kpi"><div class="label">Savings rate</div><div class="value" id="kpiSavingsRate">—</div></div>
+        <div class="kpi"><div class="label">Net worth</div><div class="value" id="kpiNetWorth">—</div></div>
+        <div class="kpi"><div class="label">Emergency fund (mo)</div><div class="value" id="kpiEmergency">—</div></div>
+      </div>
+
+      <h3 style="margin-top:24px;font-size:16px;">Your details</h3>
+      <div id="details"></div>
+    </div>
+
+    <div class="footer" style="margin-top:32px;">Data served from MongoDB &middot; cached 30s</div>
+  </div>
+</main>
+
+<script type="module" src="/public/js/dashboard.js"></script>
+</body>
+</html>

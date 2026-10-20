@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="/public/shared/base.css" />
+  <link rel="stylesheet" href="/public/auth/auth.css" />
+</head>
+<body>
+<main class="page">
+  <div class="card">
+    <div class="logo">&#10022;</div>
+    <h1>Welcome back</h1>
+    <p class="subtitle">Sign in to continue</p>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="loginEmail">Email</label>
+        <input id="loginEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
+        <div class="error-text hidden" data-err="email"></div>
+      </div>
+      <div class="field">
+        <label for="loginPassword">Password</label>
+        <div class="password-box">
+          <input id="loginPassword" type="password" placeholder="Enter your password" autocomplete="current-password" required />
+          <button type="button" class="show-btn" onclick="togglePassword('loginPassword', this)">Show</button>
+        </div>
+        <div class="error-text hidden" data-err="password"></div>
+      </div>
+      <button class="submit" type="submit">Login</button>
+    </form>
+
+    <div id="message" class="message"></div>
+    <a class="auth-link" href="/public/auth/signup.html">Don&rsquo;t have an account? Sign up</a>
+    <div class="footer">Secure authentication powered by SuperTokens</div>
+  </div>
+</main>
+
+<script type="module" src="/public/js/auth-login.js"></script>
+</body>
+</html>
