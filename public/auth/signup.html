@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="/public/shared/base.css" />
+  <link rel="stylesheet" href="/public/auth/auth.css" />
+</head>
+<body>
+<main class="page">
+  <div class="card">
+    <div class="logo">&#10022;</div>
+    <h1>Create account</h1>
+    <p class="subtitle">Create your account to get started</p>
+
+    <form id="signupForm" novalidate>
+      <div class="field">
+        <label for="signupEmail">Email</label>
+        <input id="signupEmail" type="email" placeholder="you@example.com" autocomplete="email" required />
+        <div class="error-text hidden" data-err="email"></div>
+      </div>
+      <div class="field">
+        <label for="signupPassword">Password</label>
+        <div class="password-box">
+          <input id="signupPassword" type="password" placeholder="Create a password (min 8 chars)" autocomplete="new-password" required />
+          <button type="button" class="show-btn" onclick="togglePassword('signupPassword', this)">Show</button>
+        </div>
+        <div class="helper">At least 8 characters.</div>
+        <div class="error-text hidden" data-err="password"></div>
+      </div>
+      <button class="submit" type="submit">Create Account</button>
+    </form>
+
+    <div id="message" class="message"></div>
+    <a class="auth-link" href="/public/auth/login.html">Already have an account? Sign in</a>
+    <div class="footer">Secure authentication powered by SuperTokens</div>
+  </div>
+</main>
+
+<script type="module" src="/public/js/auth-signup.js"></script>
+</body>
+</html>

@@ -1,28 +1,28 @@
-{
-    "name": "google-auth",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server.js",
-    "scripts": {
-        "build": "esbuild src/auth.js --bundle --format=esm --outfile=public/auth.js",
-        "watch": "esbuild src/auth.js --bundle --format=esm --outfile=public/auth.js --watch",
-        "dev": "npm run build && node server.js",
-        "start": "npm run build && node server.js"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "type": "commonjs",
-    "dependencies": {
-        "dotenv": "^17.4.2",
-        "express": "^5.2.1",
-        "mongodb": "^6.3.0",
-        "supertokens-node": "^24.0.3",
-        "supertokens-web-js": "^0.16.0"
-    },
-    "devDependencies": {
-        "esbuild": "^0.28.2",
-        "nodemon": "^3.1.14",
-        "vite": "^8.3.0"
-    }
+﻿{
+  "name": "google-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "esbuild src/auth-login.js src/auth-signup.js src/onboarding.js src/dashboard.js --bundle --format=esm --outdir=public/js --splitting --chunk-names=chunks/[name]-[hash]",
+    "watch": "npm run build -- --watch",
+    "dev": "npm run build && node server.js",
+    "start": "npm run build && node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^6.3.0",
+    "node-cache": "^5.1.2",
+    "supertokens-node": "^24.0.3",
+    "supertokens-web-js": "^0.16.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "nodemon": "^3.1.14"
+  }
 }

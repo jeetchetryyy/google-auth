@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onboarding</title>
+  <link rel="stylesheet" href="/public/shared/base.css" />
+</head>
+<body>
+<main class="page">
+  <div class="card" style="max-width:560px;">
+    <div class="logo">&#10022;</div>
+    <h1>Tell us about your finances</h1>
+    <p class="subtitle">This helps us personalise your dashboard. Takes ~1 minute.</p>
+
+    <form id="onboardingForm" novalidate>
+      <!-- 1. monthlyIncome -->
+      <div class="field">
+        <label for="monthlyIncome">Monthly income</label>
+        <input id="monthlyIncome" type="number" min="0" step="0.01" placeholder="e.g. 85000" required />
+        <div class="error-text hidden" data-err="monthlyIncome"></div>
+      </div>
+
+      <!-- 2. monthlyExpenses -->
+      <div class="field">
+        <label for="monthlyExpenses">Monthly expenses</label>
+        <input id="monthlyExpenses" type="number" min="0" step="0.01" placeholder="e.g. 42000" required />
+        <div class="error-text hidden" data-err="monthlyExpenses"></div>
+      </div>
+
+      <!-- 3. savingsBalance -->
+      <div class="field">
+        <label for="savingsBalance">Savings balance</label>
+        <input id="savingsBalance" type="number" min="0" step="0.01" placeholder="e.g. 250000" required />
+        <div class="error-text hidden" data-err="savingsBalance"></div>
+      </div>
+
+      <!-- 4. investmentBalance -->
+      <div class="field">
+        <label for="investmentBalance">Investment balance</label>
+        <input id="investmentBalance" type="number" min="0" step="0.01" placeholder="e.g. 500000" required />
+        <div class="error-text hidden" data-err="investmentBalance"></div>
+      </div>
+
+      <!-- 5. primaryCurrency (select) -->
+      <div class="field">
+        <label for="primaryCurrency">Primary currency</label>
+        <select id="primaryCurrency" required>
+          <option value="">Choose…</option>
+          <option value="INR">INR — Indian Rupee</option>
+          <option value="USD">USD — US Dollar</option>
+          <option value="EUR">EUR — Euro</option>
+          <option value="GBP">GBP — British Pound</option>
+        </select>
+        <div class="error-text hidden" data-err="primaryCurrency"></div>
+      </div>
+
+      <!-- 6. employmentType (select) -->
+      <div class="field">
+        <label for="employmentType">Employment type</label>
+        <select id="employmentType" required>
+          <option value="">Choose…</option>
+          <option value="salaried">Salaried</option>
+          <option value="self-employed">Self-employed</option>
+          <option value="business">Business owner</option>
+          <option value="unemployed">Unemployed</option>
+        </select>
+        <div class="error-text hidden" data-err="employmentType"></div>
+      </div>
+
+      <!-- 7. riskTolerance (radio) -->
+      <div class="field">
+        <label>Risk tolerance</label>
+        <div style="display:flex;gap:16px;margin-top:6px;">
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px;">
+            <input type="radio" name="riskTolerance" value="low" style="width:auto;" /> Low
+          </label>
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px;">
+            <input type="radio" name="riskTolerance" value="medium" style="width:auto;" /> Medium
+          </label>
+          <label style="font-weight:400;display:flex;align-items:center;gap:6px;">
+            <input type="radio" name="riskTolerance" value="high" style="width:auto;" /> High
+          </label>
+        </div>
+        <div class="error-text hidden" data-err="riskTolerance"></div>
+      </div>
+
+      <button class="submit" type="submit">Continue to dashboard</button>
+    </form>
+
+    <div id="message" class="message"></div>
+  </div>
+</main>
+
+<script type="module" src="/public/js/onboarding.js"></script>
+</body>
+</html>
